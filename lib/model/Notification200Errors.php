@@ -61,7 +61,8 @@ class Notification200Errors implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'invalid_external_user_ids' => 'string[]',
-        'invalid_player_ids' => 'string[]'
+        'invalid_player_ids' => 'string[]',
+        'invalid_aliases' => 'object'
     ];
 
     /**
@@ -104,7 +105,8 @@ class Notification200Errors implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'invalid_external_user_ids' => 'invalid_external_user_ids',
-        'invalid_player_ids' => 'invalid_player_ids'
+        'invalid_player_ids' => 'invalid_player_ids',
+        'invalid_aliases' => 'invalid_aliases'
     ];
 
     /**
@@ -114,7 +116,8 @@ class Notification200Errors implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'invalid_external_user_ids' => 'setInvalidExternalUserIds',
-        'invalid_player_ids' => 'setInvalidPlayerIds'
+        'invalid_player_ids' => 'setInvalidPlayerIds',
+        'invalid_aliases' => 'setInvalidAliases'
     ];
 
     /**
@@ -124,7 +127,8 @@ class Notification200Errors implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'invalid_external_user_ids' => 'getInvalidExternalUserIds',
-        'invalid_player_ids' => 'getInvalidPlayerIds'
+        'invalid_player_ids' => 'getInvalidPlayerIds',
+        'invalid_aliases' => 'getInvalidAliases'
     ];
 
     /**
@@ -186,6 +190,7 @@ class Notification200Errors implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $this->container['invalid_external_user_ids'] = $data['invalid_external_user_ids'] ?? null;
         $this->container['invalid_player_ids'] = $data['invalid_player_ids'] ?? null;
+        $this->container['invalid_aliases'] = $data['invalid_aliases'] ?? null;
     }
 
     /**
@@ -259,6 +264,17 @@ class Notification200Errors implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
+    public function getInvalidAliases()
+    {
+        return $this->container['invalid_aliases'];
+    }
+
+    public function setInvalidAliases($invalid_aliases)
+    {
+        $this->container['invalid_aliases'] = $invalid_aliases;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
